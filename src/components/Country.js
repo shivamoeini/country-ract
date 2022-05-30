@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
+
 const Country = () => {
   const [country, setCountry] = useState([]);
   const { name } = useParams();
@@ -34,13 +35,17 @@ const Country = () => {
             capital,
             flags,
             nativeName,
-            subregion,
-            currencies,
+            currency,
             languages,
             borders,
-          } = country;
+            maps,
+            subregion,
+          } = country[0];
 
-          const key=Object.keys(name.nativeName)[0];
+          const lang = Object.keys(languages)[0];
+
+          const key = Object.keys(name.nativeName)[0];
+
           return (
             <article key={uuidv4()}>
               <div className="flag">
@@ -48,7 +53,33 @@ const Country = () => {
               </div>
 
               <div className="country-details">
-                <h2>{name.nativeName[key].common}</h2>
+                <div>
+                  <h2>{name.common}</h2>
+                  <h5>
+                    Native Name: <span>{name.nativeName[key].common}</span>
+                  </h5>
+                  <h5>
+                    Population: <span>{population}</span>
+                  </h5>
+                  <h5>
+                    Region: <span>{region}</span>
+                  </h5>
+                </div>
+                <div>
+                  <h5>
+                    Sub Region: <span>{subregion}</span>
+                  </h5>
+                  <h5>
+                    Capital: <span>{capital}</span>
+                  </h5>
+                  <h5>
+                    Languages: <span>{lang}</span>
+                  </h5>
+                </div>
+              </div>
+
+              <div>
+                <h3>Border Countries: {borders}</h3>
               </div>
             </article>
           );

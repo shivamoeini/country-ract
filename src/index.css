@@ -40,10 +40,10 @@ ul {
   transition: background-color 0.2s;
 }
 
-.btn:hover {
+/* .btn:hover {
   background-color: #fff;
   color: var(--dark-bg-color);
-}
+} */
 
 .btn-light {
   background-color: var(--article-color);
@@ -192,7 +192,8 @@ body {
   }
 
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(
+      3, 1fr);
     gap: 60px;
   }
 }
