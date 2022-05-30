@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-
+import "../country.css";
 
 const Country = () => {
   const [country, setCountry] = useState([]);
@@ -24,7 +24,7 @@ const Country = () => {
     <>
       <Link to={"/"} className="btn btn-light">
         <i className="fas fa-arrow-left"></i>
-        Back Home
+        Back
       </Link>
       <section className="country">
         {country.map((item) => {
@@ -48,11 +48,11 @@ const Country = () => {
 
           return (
             <article key={uuidv4()}>
+
+              <div className="country-details">
               <div className="flag">
                 <img src={flags.png} alt={name.common} />
               </div>
-
-              <div className="country-details">
                 <div>
                   <h2>{name.common}</h2>
                   <h5>
