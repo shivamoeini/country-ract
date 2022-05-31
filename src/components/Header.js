@@ -1,7 +1,7 @@
-import UseDarkMode from "./components/UseDarkMode";
+
 
 const Header = () => {
-  const [toggleTheme]=UseDarkMode();
+
   return (
     <>
       <header className="header">
@@ -10,7 +10,7 @@ const Header = () => {
         </div>
         <div  >
 
-          <i className="fas fa-moon" onClick={toggleTheme} ></i>
+          <i className="fas fa-moon" ></i>
         </div>
       </header>
     </>
